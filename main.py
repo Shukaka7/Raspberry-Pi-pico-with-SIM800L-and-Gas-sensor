@@ -26,9 +26,7 @@ def send_command(cmdstr, lines=1, msgtext=None):
         print(msgtext)
         gsm_module.write(msgtext)
     buf=gsm_module.readline() #discard linefeed etc
-    #print('discard linefeed:{}'.format(buf))
     buf=gsm_module.readline()
-    #print('next linefeed:{}'.format(buf))
     if not buf:
         return None
     result = convert_to_string(buf)
@@ -38,7 +36,6 @@ def send_command(cmdstr, lines=1, msgtext=None):
             buf=gsm_module.readline()
             if not buf:
                 return result
-            #print(buf)
             buf = convert_to_string(buf)
             if not buf == '' and not buf == 'OK':
                 gsm_buffer += buf+'\n'
@@ -68,8 +65,8 @@ while True:
         LED.value(1)
         send_sms('SMS text that you want to send')
         #--~--#
-        char=send_command('AT+CBC')
-        charg=char[:-5]
+        charg=send_command('AT+CBC')#check battery percent
+        charg=charg[:-5]
         charge=int(charg.replace('+CBC: 0,',''))
         print(charge)
         if charge<=15:
@@ -81,5 +78,5 @@ while True:
     else:
         Buzzer.value(0)
         LED.value(0)
-    sleep(2)#change the refresh rate if you want to. For faster rate, reduce the time and vice-versa
+    sleep(2)#change the refresh rate(of the sensor) if you want to. For faster rate, reduce the time and vice-versa
 
