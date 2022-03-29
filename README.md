@@ -14,7 +14,7 @@
   * Some jumper wires
 
 ## Usage:-
-  Flash the pico with the appropriate micropython file. Then use Thonny to flash the main.py file. Use the image as a reference and place everything on the breadboard _correctly_. Give a power source for the Pico & the SIM800L and you should be good to go! The in-built LED on the Pico blinks when the sim800l battery is lower than 15%.
+  Flash the pico with the appropriate micropython file. Then use Thonny to flash the main.py file. Use the image as a reference and place everything on the breadboard _correctly_. Give a power source for the Pico & the SIM800L and you should be good to go!
   
 This can be modified to use _any sensor_! Your Creativity is the only limit.
 BTW, I got a little help from [this](https://github.com/ahmadlogs/rpi-pico-upy) repo, you can check it out.
