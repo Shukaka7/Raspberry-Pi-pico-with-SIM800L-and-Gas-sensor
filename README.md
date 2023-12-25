@@ -16,6 +16,8 @@
 
 ## Usage:-
   Flash the pico with the appropriate micropython file. Then use Thonny to flash the main.py file. Use the image as a reference and place everything on the breadboard **correctly**. Give a power source for the Pico & the SIM800L and you should be good to go!
+
+IMPORTANT NOTE: Sorry, I forgot to connect the SIM800L ground to the pico, please make sure to do that. Or else, it won't work.
   
 This can be modified to use _any sensor_! Your Creativity is the only limit.
 BTW, I got a little help from [this](https://github.com/ahmadlogs/rpi-pico-upy) repo, you can check it out.
